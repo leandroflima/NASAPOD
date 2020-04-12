@@ -1,0 +1,23 @@
+﻿@model NASAPOD.Models.PictureOfDayFilter
+
+@{
+    ViewData["Title"] = "NASA Picture of Day";
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="PictureOfDay">
+            <label asp-for="Date" class="control-label"></label>
+            <input asp-for="Date" class="form-control" />
+            <span asp-validation-for="Date" class="text-danger"></span>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="PictureOfDay" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
